@@ -301,7 +301,7 @@ function extractDownload(filePath) {
 
 function copyIntoPlace(extractedPath, targetPath) {
   console.log('Removing', targetPath)
-  return kew.nfcall(fs.remove, targetPath).then(function () {
+  return kew.nfcall(fs.move, targetPath, targetPath+"_old_"+new Date().getTime()).then(function () {
     // Look for the extracted directory, so we can rename it.
     var files = fs.readdirSync(extractedPath)
     for (var i = 0; i < files.length; i++) {
