@@ -300,7 +300,7 @@ function extractDownload(filePath) {
 
 
 function copyIntoPlace(extractedPath, targetPath) {
-  console.log('Removing', targetPath, extractedPath, fs.statSync(targetPath));
+  //console.log('Removing', targetPath, extractedPath, fs.statSync(targetPath));
   return kew.fcall(function () {
     // Look for the extracted directory, so we can rename it.
     var files = fs.readdirSync(extractedPath)
